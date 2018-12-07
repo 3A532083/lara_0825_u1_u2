@@ -23,6 +23,8 @@ Route::get('/', function () {
 //    $post->content = 'test content2';
 //    $post->save();
 
-    $posts = \App\Post::all();
+    // $posts = \App\Post::all();
+
+    $post = \App\Post::find(1);
     dd($posts);
 });
