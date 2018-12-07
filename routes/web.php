@@ -54,8 +54,14 @@ Route::get('/', function () {
 //    $featuredPosts = \App\Post::where('is_feature', 1)->get();
 //    dd($featuredPosts);
 
-    $post = \App\Post::find(4);
-    dd($post);
-    $lastPost = \App\Post::orderBy('id', 'DESC')->first();
-    dd($lastPost);
+//    $post = \App\Post::find(4);
+//    dd($post);
+//    $lastPost = \App\Post::orderBy('id', 'DESC')->first();
+//    dd($lastPost);
+
+    $post = \App\Post::find(1);
+    echo $post->id.'   '.$post->title.'<br><hr>';
+    foreach($post->comments as $comment) {
+        echo '*'.$comment->content.'<br>';
+    }
 });
